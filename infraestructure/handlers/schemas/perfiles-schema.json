@@ -1,0 +1,15 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "PerfilInputModel",
+    "description": "Validacion de los pefiles de la aplicacion.",
+    "type": "object",
+    "properties": {
+        "nombrePerfil": {
+          "description": "Nombre del perfil",
+          "type": "string",
+          "maxLength":50
+        }
+      
+    },
+    "required": [ "nombrePerfil" ]
+}
