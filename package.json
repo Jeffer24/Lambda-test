@@ -7,8 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy:dev": "serverless deploy --stage dev --region us-east-1",
-    "deploy:stg": "serverless deploy --stage stg --region us-east-1",
-    "offline": "serverless offline --stage dev --region us-east-1 --host 0.0.0.0 --lambdaPort 3301 --httpPort 3300"
+    "deploy:stg": "serverless deploy --stage stg --region us-east-1"
   },
 
   "dependencies": {
