@@ -6,8 +6,6 @@ service: web-proyecto-serverless
 
 frameworkVersion: '3'
 
-plugins:
-  - serverless-offline
 
 provider:
   name: aws
