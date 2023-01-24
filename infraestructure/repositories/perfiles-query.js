@@ -23,10 +23,19 @@ const updatePerfil = async ({
     nombrePerfil,
     estado
 }, id) => {
-
+    return await db(TableName)
+    .where({id:id})
+    .update({
+        nombrePerfil,
+        estado
+    });
 }
-const deletePerfil = async (id) => {
 
+
+const deletePerfil = async (id) => {
+    return await db(TableName)
+    .where({id:id})
+    .del();
 }
 
 module.exports = {

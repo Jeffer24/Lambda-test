@@ -7,7 +7,8 @@ const findPerfiles = async () => {
 }
 
 const findOnePerfil = async (id) => {
-
+    const perf = await perfilQuery.findOnePerfil(id);
+    return perfilDto.getDBFromPerfilDto(perf);
 }
 
 const createPerfil = async ({
@@ -23,13 +24,17 @@ const createPerfil = async ({
 }
 
 const updatePerfil = async ({
-    nombrePerfil
+    nombrePerfil,
+    estado
 }, idPerfiles) => {
-
+    return await perfilQuery.updatePerfil({
+        nombrePerfil,
+        estado
+    }, idPerfiles)
 }
 
 const deletePerfil = async (idPerfiles) => {
-
+    return await perfilQuery.deletePerfil(idPerfiles);
 }
 
 module.exports = {
