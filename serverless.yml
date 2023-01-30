@@ -6,6 +6,8 @@ service: web-proyecto-serverless
 
 frameworkVersion: '3'
 
+plugins:
+  - serverless-offline
 
 provider:
   name: aws
@@ -46,7 +48,7 @@ functions:
           method: put
           request:
             schemas:
-              application/json: perfil-input-model
+              application/json: ${file(infraestructure/handlers/schemas/perfiles-schema.json)}
   deletePerfil:
     handler: infraestructure/handlers/perfiles-handler.deletePerfil
     events:

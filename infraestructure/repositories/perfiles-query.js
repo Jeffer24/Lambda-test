@@ -1,13 +1,14 @@
 const { db } = require('./connections');
 const TableName = 'Perfiles';
 
+
 const findPerfiles = async () => {
     return db.select().table(TableName);
 }
 
 const findOnePerfil = async (id) => {
     //return db.select().table(TableName).innerJoin(TableName, estudios.id, games.id)
-    return db.select().table(TableName).where('id', id).first();
+    return db.select().table(TableName).where('idPerfiles', id).first();
 }
 const createPerfil = async ({
     nombrePerfil,
@@ -20,21 +21,21 @@ const createPerfil = async ({
     });
 }
 const updatePerfil = async ({
-    nombrePerfil,
+    nombrePerfil, 
     estado
 }, id) => {
     return await db(TableName)
-    .where({id:id})
+    .where('idPerfiles', id)
     .update({
-        nombrePerfil,
-        estado
+        nombrePerfil: nombrePerfil,
+        estado: estado
     });
 }
 
 
 const deletePerfil = async (id) => {
     return await db(TableName)
-    .where({id:id})
+    .where('idPerfiles', id)
     .del();
 }
 

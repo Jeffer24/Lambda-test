@@ -8,7 +8,8 @@ const findPerfiles = async () => {
 
 const findOnePerfil = async (id) => {
     const perf = await perfilQuery.findOnePerfil(id);
-    return perfilDto.getDBFromPerfilDto(perf);
+    if(!perf) return null;
+    return perfilDto.getPerfilFromDBDto(perf);
 }
 
 const createPerfil = async ({
@@ -24,11 +25,10 @@ const createPerfil = async ({
 }
 
 const updatePerfil = async ({
-    nombrePerfil,
-    estado
+    nombrePerfil, estado
 }, idPerfiles) => {
     return await perfilQuery.updatePerfil({
-        nombrePerfil,
+        nombrePerfil, 
         estado
     }, idPerfiles)
 }
