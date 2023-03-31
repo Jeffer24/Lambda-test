@@ -31,8 +31,8 @@ functions:
       - http:
           path: perfiles
           method: get
-          cors: true
-          authorizer: aws_iam
+          #cors: true
+          #authorizer: aws_iam
   createPerfil:
     handler: infraestructure/handlers/perfiles-handler.createPerfil
     events:
