@@ -18,9 +18,15 @@ const estadoChange = (estado) => {
 const getPerfilesFromDBArray = (perfilesDB) =>
   perfilesDB.map(getPerfilFromDBDto);
 
-const getDBFromPerfilDto = ({ idPerfiles, nombrePerfil, estado }) => ({
+const getDBFromPerfilDto = ({
+  idPerfiles,
+  nombrePerfil,
+  tipoCobertura,
+  estado,
+}) => ({
   idPerfiles: idPerfiles,
   nombrePerfil: nombrePerfil,
+  tipoCobertura: tipoCobertura,
   estado: estado,
 });
 

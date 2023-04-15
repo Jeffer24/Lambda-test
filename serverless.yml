@@ -2,7 +2,7 @@ app: web-proyecto-serverless
 org: jeffer24
 #console: true
 
-service: web-proyecto-serverless
+service: serverless-profile-module
 
 frameworkVersion: '3'
 
